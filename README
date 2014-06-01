@@ -1,0 +1,3 @@
+The concept:
+- compatible with usbtinyisp http://www.ladyada.net/make/usbtinyisp/ for reprogramming the MCU (using avrdude directly)
+- extended to program the flash (using our own code)
