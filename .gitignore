@@ -1,1 +1,7 @@
 more/
+*.o
+*.so
+*.map
+*.elf
+*.hex
+*.lst

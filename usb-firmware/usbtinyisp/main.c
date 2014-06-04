@@ -303,3 +303,5 @@ extern	int	main ( void )
 		usb_poll();
 	}
 }
+
+void exit(int __status) {}

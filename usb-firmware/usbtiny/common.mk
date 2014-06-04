@@ -22,10 +22,10 @@
 check	= $(shell $(CC) $1 -c -xc /dev/null -o/dev/null 2>/dev/null && echo $1)
 
 CC	= avr-gcc
-OPTIM	= -Os -ffunction-sections $(call check,-fno-split-wide-types)
+OPTIM	= -Os -ffunction-sections $(call check,-fno-split-wide-types) -fshort-enums
 CFLAGS	= -g -Wall -I. -I$(USBTINY) $(OPTIM)
 LDFLAGS	= -g -Wl,--relax,--gc-sections
-MODULES = crc.o int.o usb.o $(OBJECTS)
+MODULES = crc.o int.o usb.o $(OBJECTS) /usr/lib/avr/lib/avr25/libc.a /usr/lib/avr/lib/avr25/crttn2313a.o
 UTIL	= $(USBTINY)/../util
 
 main.hex:
@@ -33,13 +33,17 @@ main.hex:
 all:		main.hex $(SCHEM)
 
 clean:
-	rm -f main.elf *.o tags *.sch~ gschem.log
+	rm -f main.elf* *.o tags *.sch~ gschem.log
 
 clobber:	clean
 	rm -f main.hex $(SCHEM)
 
 main.elf:	$(MODULES)
-	$(LINK.o) -o $@ $(MODULES)
+	# $(LINK.o) -o $@ $(MODULES)
+	avr-ld -o $@ $(MODULES)
+
+%.elf.lst: %.elf
+	avr-objdump -h -S $< > $@
 
 main.hex:	main.elf $(UTIL)/check.py
 	@python $(UTIL)/check.py main.elf $(STACK) $(FLASH) $(SRAM)

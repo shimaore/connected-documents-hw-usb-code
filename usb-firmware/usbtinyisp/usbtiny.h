@@ -52,7 +52,7 @@
 // The following optional macros may be used as an identification of
 // your device. Undefine them when you run out of flash space.
 //#define	USBTINY_VENDOR_NAME		"Dick Streefland"
-#define	USBTINY_DEVICE_NAME		"USBtinyISP"
+#define	USBTINY_DEVICE_NAME		"Frifri"
 #undef	USBTINY_SERIAL
 
 // Define the device class, subclass and protocol. Device class 0xff
