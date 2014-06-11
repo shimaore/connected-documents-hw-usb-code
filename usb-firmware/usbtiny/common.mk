@@ -23,7 +23,7 @@ check	= $(shell $(CC) $1 -c -xc /dev/null -o/dev/null 2>/dev/null && echo $1)
 
 CC	= avr-gcc
 OPTIM	= -Os -ffunction-sections $(call check,-fno-split-wide-types) -fshort-enums
-CFLAGS	= -g -Wall -I. -I$(USBTINY) $(OPTIM)
+CFLAGS	= -g -Wall -I. -I$(USBTINY) $(OPTIM) -std=gnu99
 LDFLAGS	= -g -Wl,--relax,--gc-sections
 MODULES = crc.o int.o usb.o $(OBJECTS) /usr/lib/avr/lib/avr25/libc.a /usr/lib/avr/lib/avr25/crttn2313a.o
 UTIL	= $(USBTINY)/../util
