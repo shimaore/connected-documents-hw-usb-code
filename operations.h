@@ -1,0 +1,10 @@
+#ifndef __OPERATIONS_H
+#define __OPERATIONS_H
+
+enum {
+  COMMAND_USI_INIT,
+  COMMAND_USI_SPI,
+  COMMAND_USI_STOP
+};
+
+#endif

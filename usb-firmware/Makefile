@@ -7,7 +7,7 @@
 # Public License as published by the Free Software Foundation.
 # ======================================================================
 
-DIR	= usbtinyisp util
+DIR	= kiss util
 
 all clean clobber:
 	@for i in $(DIR); do $(MAKE) $(MFLAGS) -C $$i $@; done
