@@ -18,7 +18,7 @@ extern byte_t usb_setup ( byte_t data[8] )
 {
   switch(data[0]) {
     case COMMAND_USI_INIT:
-      usi_spi_init(data[1]);
+      usi_spi_init();
       return 0;
     case COMMAND_USI_STOP:
       usi_spi_stop();
