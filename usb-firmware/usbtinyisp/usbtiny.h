@@ -49,9 +49,9 @@
 
 // The following optional macros may be used as an identification of
 // your device. Undefine them when you run out of flash space.
-#define	USBTINY_VENDOR_NAME		"e-sensory"
+#define	USBTINY_VENDOR_NAME		"shimaore.net"
 #undef USBTINY_VENDOR_NAME
-#define	USBTINY_DEVICE_NAME		"Frifri"
+#define	USBTINY_DEVICE_NAME		"cdocs"
 #undef USBTINY_DEVICE_NAME
 #undef	USBTINY_SERIAL
 
